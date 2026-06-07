@@ -8,12 +8,13 @@ ratatui = "0.30"
 crossterm = "0.29"
 anyhow = "1.0"
 clap = { version = "4.4", features = ["derive"] }
+similar = "3.1"          # for unified diff
 
 # ONNX
 tract-onnx = { version = "0.23", optional = true }
 
 # JLD2 (HDF5-based)
-hdf5-metno = { version = "0.9", optional = true }
+hdf5-metno = { version = "0.12", optional = true }
 
 [features]
 default = ["onnx"]

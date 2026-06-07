@@ -83,3 +83,16 @@ cargo install --path . --features=jld2
    Compiling netron-tui v0.1.0  
     Finished `release` profile [optimized] target(s) in 26.88s
 ```
+--compare
+
+```
+netron-tui --cli --compare latest_good.jld2 bad_step_0023804.jld2 --output-format side-by-side --suppress-common
+Only differing lines (common lines suppressed):
+File: bad_step_0023804.jld2                           │ File: latest_good.jld2
+│   ├── loader_buf (dataset, shape: [990033])         │ │   ├── loader_buf (dataset, shape: [991141])
+koziner@CF-C1:/media/koziner/16optane/ckpt_10L4096$ netron-tui --cli --compare latest_good.jld2 bad_step_0023804.jld2 --output-format side-by-side --suppress-common  --diff-algorithm histogram
+Only differing lines (common lines suppressed):
+File: bad_step_0023804.jld2                           │ File: latest_good.jld2
+│   ├── loader_buf (dataset, shape: [990033])         │ │   ├── loader_buf (dataset, shape: [991141])
+
+```

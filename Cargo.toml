@@ -1,0 +1,21 @@
+[package]
+name = "netron-tui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ratatui = "0.30"
+crossterm = "0.29"
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+
+# ONNX
+tract-onnx = { version = "0.23", optional = true }
+
+# JLD2 (HDF5-based)
+hdf5-metno = { version = "0.9", optional = true }
+
+[features]
+default = ["onnx"]
+onnx = ["tract-onnx"]
+jld2 = ["hdf5-metno"]
